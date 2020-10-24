@@ -30,7 +30,7 @@ export class AppComponent {
     );
     simulationConnection[environment.whichPlayer].initializeConnection(
       examplePlayers[environment.whichPlayer],
-      1000 + 5000 * environment.whichPlayer
+      1000 - environment.correctTimeInMillis + 5000 * environment.whichPlayer
     );
   }
 

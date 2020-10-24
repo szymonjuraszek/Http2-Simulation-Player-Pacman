@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  whichPlayer: 4
+  whichPlayer: 4,
+  correctTimeInMillis: 1200
 };

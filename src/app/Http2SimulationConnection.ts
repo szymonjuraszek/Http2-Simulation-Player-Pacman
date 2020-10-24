@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Player} from './model/Player';
 import {MeasurementService} from './measurement/MeasurementService';
-import {COMMUNICATION_TIME, MESSAGE_FREQUENCY} from '../../globalConfig';
+import {COMMUNICATION_TIME, MESSAGE_FREQUENCY, URL} from '../../globalConfig';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +13,6 @@ export class Http2SimulationConnection {
   private variable = this.makeid(30000);
   private nickname;
   private http: HttpClient;
-  private serverUrl = 'https://localhost:8080';
-  // private serverUrl = 'https://83.229.84.77:8080';
   private eventSource: EventSource;
   private sub: Subscription;
   private timeForStartCommunication;
@@ -75,7 +73,7 @@ export class Http2SimulationConnection {
       if (this.eventSource.OPEN) {
         this.eventSource.close();
       }
-      this.http.delete(this.serverUrl + '/emitter/' + this.nickname).subscribe(value => {
+      this.http.delete(URL + '/emitter/' + this.nickname).subscribe(value => {
         console.error('Usunalem gracza');
       });
     }, COMMUNICATION_TIME);
@@ -84,7 +82,7 @@ export class Http2SimulationConnection {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   sendPosition(dataToSend): void {
-    this.http.put(this.serverUrl + '/player', JSON.stringify(dataToSend), {
+    this.http.put(URL + '/player', JSON.stringify(dataToSend), {
       headers: {
         'Content-Type': 'application/json',
         requestTimestamp: new Date().getTime().toString()
@@ -102,10 +100,10 @@ export class Http2SimulationConnection {
   }
 
   joinToGame(nickname: string): void {
-    this.http.get(this.serverUrl + '/player/' + nickname)
+    this.http.get(URL + '/player/' + nickname)
       .subscribe((ifExist: boolean) => {
         this.nickname = nickname;
-        this.eventSource = new EventSource(this.serverUrl + '/emitter/' + this.nickname);
+        this.eventSource = new EventSource(URL + '/emitter/' + this.nickname);
 
         this.eventSource.addEventListener('/pacman/update/monster', (monsterPositionEvent: MessageEvent) => {
         });
@@ -127,14 +125,14 @@ export class Http2SimulationConnection {
               playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
           }
         });
-        this.http.get(this.serverUrl + '/coins').subscribe((coinsPosition) => {
+        this.http.get(URL + '/coins').subscribe((coinsPosition) => {
         });
       });
   }
 
   addPlayer(nickname: string): void {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    this.http.post(this.serverUrl + '/players', JSON.stringify(nickname), {headers, observe: 'response'})
+    this.http.post(URL + '/players', JSON.stringify(nickname), {headers, observe: 'response'})
       .subscribe((playerToAdd) => {
       });
   }
