@@ -14,20 +14,21 @@ import {environment} from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private simulationConnection = new Array(10);
   private downloadService: DownloadService;
   private readonly measurementService: MeasurementService;
 
   constructor(private http: HttpClient) {
     const examplePlayers = (data as any).default;
+    const simulationConnection = new Array(examplePlayers.length);
+
     this.measurementService = new MeasurementService();
     this.downloadService = new DownloadService(this.measurementService);
 
-    this.simulationConnection[environment.whichPlayer] = new Http2SimulationConnection(
+    simulationConnection[environment.whichPlayer] = new Http2SimulationConnection(
       examplePlayers[environment.whichPlayer].nickname,
       http, this.measurementService
     );
-    this.simulationConnection[environment.whichPlayer].initializeConnection(
+    simulationConnection[environment.whichPlayer].initializeConnection(
       examplePlayers[environment.whichPlayer],
       1000 + 5000 * environment.whichPlayer
     );
