@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   whichPlayer: 1,
-  correctTimeInMillis: 0
+  correctTimeInMillis: 0,
+  isSave: false
 };
 
 /*

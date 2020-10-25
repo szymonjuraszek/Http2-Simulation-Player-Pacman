@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 import {Player} from './model/Player';
 import {MeasurementService} from './measurement/MeasurementService';
 import {COMMUNICATION_TIME, MESSAGE_FREQUENCY, URL} from '../../globalConfig';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -89,12 +90,22 @@ export class Http2SimulationConnection {
       },
       observe: 'response'
     }).subscribe((player: HttpResponse<Player>) => {
-      if (this.nickname === 'remote01' || this.nickname === 'remote06') {
-        const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
-        this.measurementService.addMeasurementResponse(player.body.nickname,
-          responseTimeInMillis,
-          Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
-          player.body.version, Number(player.headers.get('content-length')));
+      if (environment.whichPlayer === 0) {
+        if (player.body.nickname.match('first*')) {
+          const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
+          this.measurementService.addMeasurementResponse(player.body.nickname,
+            responseTimeInMillis,
+            Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
+            player.body.version, Number(player.headers.get('content-length')));
+        }
+      } else if (environment.whichPlayer === 5) {
+        if (player.body.nickname.match('second*')) {
+          const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
+          this.measurementService.addMeasurementResponse(player.body.nickname,
+            responseTimeInMillis,
+            Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
+            player.body.version, Number(player.headers.get('content-length')));
+        }
       }
     });
   }
@@ -117,12 +128,22 @@ export class Http2SimulationConnection {
         });
         this.eventSource.addEventListener('/pacman/update/player', (playerToUpdateEvent: MessageEvent) => {
           const playersWithMeasurementInfo = JSON.parse(playerToUpdateEvent.data);
-          if (this.nickname === 'remote01' || this.nickname === 'remote06') {
-            const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
-            this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
-              responseTimeInMillis,
-              Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
-              playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
+          if (environment.whichPlayer === 0) {
+            if (playersWithMeasurementInfo.player.nickname.match('first*')) {
+              const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
+              this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
+                responseTimeInMillis,
+                Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
+                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
+            }
+          } else if (environment.whichPlayer === 5) {
+            if (playersWithMeasurementInfo.player.nickname.match('second*')) {
+              const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
+              this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
+                responseTimeInMillis,
+                Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
+                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
+            }
           }
         });
         this.http.get(URL + '/coins').subscribe((coinsPosition) => {
