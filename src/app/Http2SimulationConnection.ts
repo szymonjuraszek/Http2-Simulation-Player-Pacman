@@ -90,7 +90,7 @@ export class Http2SimulationConnection {
       },
       observe: 'response'
     }).subscribe((player: HttpResponse<Player>) => {
-      if (environment.whichPlayer === 0) {
+      if (environment.whichPlayer === 1) {
         if (player.body.nickname.match('first*')) {
           const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
           this.measurementService.addMeasurementResponse(player.body.nickname,
