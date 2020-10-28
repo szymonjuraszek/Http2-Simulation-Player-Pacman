@@ -108,6 +108,22 @@
                   "with": "src/environments/environment.player10.ts"
                 }
               ]
+            },
+            "player11": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player11.ts"
+                }
+              ]
+            },
+            "player12": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player12.ts"
+                }
+              ]
             }
           }
         },
@@ -146,6 +162,12 @@
             },
             "player10": {
               "browserTarget": "Example:build:player10"
+            },
+            "player11": {
+              "browserTarget": "Example:build:player11"
+            },
+            "player12": {
+              "browserTarget": "Example:build:player12"
             }
           }
         },

@@ -12,6 +12,8 @@
     "start-8": "ng serve --port 5007 --configuration player8",
     "start-9": "ng serve --port 5008 --configuration player9",
     "start-10": "ng serve --port 5009 --configuration player10",
+    "start-11": "ng serve --port 5010 --configuration player11",
+    "start-12": "ng serve --port 5011 --configuration player12",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
