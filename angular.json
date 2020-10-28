@@ -265,9 +265,6 @@
             "player12": {
               "browserTarget": "Example:build:player12"
             },
-            "player12": {
-              "browserTarget": "Example:build:player12"
-            },
             "player13": {
               "browserTarget": "Example:build:player13"
             },
@@ -300,6 +297,9 @@
             },
             "player23": {
               "browserTarget": "Example:build:player23"
+            },
+            "player24": {
+              "browserTarget": "Example:build:player24"
             }
           }
         },
