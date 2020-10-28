@@ -40,7 +40,7 @@
     "version": 0
   },
   {
-    "nickname": "second06",
+    "nickname": "first06",
     "positionX": 1400,
     "positionY": 400,
     "score": 0,
@@ -48,7 +48,7 @@
     "version": 0
   },
   {
-    "nickname": "second07",
+    "nickname": "first07",
     "positionX": 1400,
     "positionY": 464,
     "score": 0,
@@ -56,7 +56,7 @@
     "version": 0
   },
   {
-    "nickname": "second08",
+    "nickname": "first08",
     "positionX": 1400,
     "positionY": 528,
     "score": 0,
@@ -64,7 +64,7 @@
     "version": 0
   },
   {
-    "nickname": "second09",
+    "nickname": "first09",
     "positionX": 1400,
     "positionY": 592,
     "score": 0,
@@ -72,7 +72,7 @@
     "version": 0
   },
   {
-    "nickname": "second10",
+    "nickname": "first10",
     "positionX": 1400,
     "positionY": 656,
     "score": 0,
@@ -80,7 +80,7 @@
     "version": 0
   },
   {
-    "nickname": "remote11",
+    "nickname": "first11",
     "positionX": 1264,
     "positionY": 912,
     "score": 0,
@@ -88,7 +88,103 @@
     "version": 0
   },
   {
-    "nickname": "remote12",
+    "nickname": "first12",
+    "positionX": 1200,
+    "positionY": 912,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote13",
+    "positionX": 1264,
+    "positionY": 912,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote14",
+    "positionX": 1264,
+    "positionY": 976,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote15",
+    "positionX": 1264,
+    "positionY": 848,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote16",
+    "positionX": 1264,
+    "positionY": 784,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote17",
+    "positionX": 1264,
+    "positionY": 720,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote18",
+    "positionX": 1400,
+    "positionY": 400,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote19",
+    "positionX": 1400,
+    "positionY": 464,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote20",
+    "positionX": 1400,
+    "positionY": 528,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote21",
+    "positionX": 1400,
+    "positionY": 592,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote22",
+    "positionX": 1400,
+    "positionY": 656,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote23",
+    "positionX": 1264,
+    "positionY": 912,
+    "score": 0,
+    "stepDirection": "HOR",
+    "version": 0
+  },
+  {
+    "nickname": "remote24",
     "positionX": 1200,
     "positionY": 912,
     "score": 0,

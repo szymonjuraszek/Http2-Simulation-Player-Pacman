@@ -124,6 +124,102 @@
                   "with": "src/environments/environment.player12.ts"
                 }
               ]
+            },
+            "player13": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player13.ts"
+                }
+              ]
+            },
+            "player14": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player14.ts"
+                }
+              ]
+            },
+            "player15": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player15.ts"
+                }
+              ]
+            },
+            "player16": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player16.ts"
+                }
+              ]
+            },
+            "player17": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player17.ts"
+                }
+              ]
+            },
+            "player18": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player18.ts"
+                }
+              ]
+            },
+            "player19": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player19.ts"
+                }
+              ]
+            },
+            "player20": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player20.ts"
+                }
+              ]
+            },
+            "player21": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player21.ts"
+                }
+              ]
+            },
+            "player22": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player22.ts"
+                }
+              ]
+            },
+            "player23": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player23.ts"
+                }
+              ]
+            },
+            "player24": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.player24.ts"
+                }
+              ]
             }
           }
         },
@@ -168,6 +264,42 @@
             },
             "player12": {
               "browserTarget": "Example:build:player12"
+            },
+            "player12": {
+              "browserTarget": "Example:build:player12"
+            },
+            "player13": {
+              "browserTarget": "Example:build:player13"
+            },
+            "player14": {
+              "browserTarget": "Example:build:player14"
+            },
+            "player15": {
+              "browserTarget": "Example:build:player15"
+            },
+            "player16": {
+              "browserTarget": "Example:build:player16"
+            },
+            "player17": {
+              "browserTarget": "Example:build:player17"
+            },
+            "player18": {
+              "browserTarget": "Example:build:player18"
+            },
+            "player19": {
+              "browserTarget": "Example:build:player19"
+            },
+            "player20": {
+              "browserTarget": "Example:build:player20"
+            },
+            "player21": {
+              "browserTarget": "Example:build:player21"
+            },
+            "player22": {
+              "browserTarget": "Example:build:player22"
+            },
+            "player23": {
+              "browserTarget": "Example:build:player23"
             }
           }
         },

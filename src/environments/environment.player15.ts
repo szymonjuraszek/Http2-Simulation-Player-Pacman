@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  whichPlayer: 5,
-  correctTimeInMillis: 1500,
+  whichPlayer: 14,
+  correctTimeInMillis: 0,
   isSave: false
 };
