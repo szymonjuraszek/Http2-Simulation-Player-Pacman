@@ -96,7 +96,7 @@ export class Http2SimulationConnection {
           this.measurementService.addMeasurementResponse(player.body.nickname,
             responseTimeInMillis,
             Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
-            player.body.version, Number(player.headers.get('content-length')));
+            player.body.version, Number(player.headers.get('content-length')), player.headers.get('requestTimestamp'));
         }
       } else if (environment.whichPlayer === 5) {
         if (player.body.nickname.match('second*')) {
@@ -104,7 +104,7 @@ export class Http2SimulationConnection {
           this.measurementService.addMeasurementResponse(player.body.nickname,
             responseTimeInMillis,
             Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
-            player.body.version, Number(player.headers.get('content-length')));
+            player.body.version, Number(player.headers.get('content-length')), player.headers.get('requestTimestamp'));
         }
       }
     });
@@ -134,7 +134,7 @@ export class Http2SimulationConnection {
               this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
                 responseTimeInMillis,
                 Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
-                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
+                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength, playersWithMeasurementInfo.requestTimestamp);
             }
           } else if (environment.whichPlayer === 5) {
             if (playersWithMeasurementInfo.player.nickname.match('second*')) {
@@ -142,7 +142,7 @@ export class Http2SimulationConnection {
               this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
                 responseTimeInMillis,
                 Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
-                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength);
+                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength, playersWithMeasurementInfo.requestTimestamp);
             }
           }
         });
