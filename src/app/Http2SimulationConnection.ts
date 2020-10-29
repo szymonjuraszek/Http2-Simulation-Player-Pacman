@@ -128,7 +128,7 @@ export class Http2SimulationConnection {
         });
         this.eventSource.addEventListener('/pacman/update/player', (playerToUpdateEvent: MessageEvent) => {
           const playersWithMeasurementInfo = JSON.parse(playerToUpdateEvent.data);
-          if (environment.whichPlayer === 0) {
+          if (environment.whichPlayer === 1) {
             if (playersWithMeasurementInfo.player.nickname.match('first*')) {
               const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
               this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
