@@ -90,15 +90,7 @@ export class Http2SimulationConnection {
       },
       observe: 'response'
     }).subscribe((player: HttpResponse<Player>) => {
-      if (environment.whichPlayer === 1) {
-        if (player.body.nickname.match('first*')) {
-          const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
-          this.measurementService.addMeasurementResponse(player.body.nickname,
-            responseTimeInMillis,
-            Math.ceil((Number(player.headers.get('requestTimestamp')) - this.timeForStartCommunication) / 1000),
-            player.body.version, Number(player.headers.get('content-length')), player.headers.get('requestTimestamp'));
-        }
-      } else if (environment.whichPlayer === 5) {
+      if (environment.whichPlayer === 5) {
         if (player.body.nickname.match('second*')) {
           const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
           this.measurementService.addMeasurementResponse(player.body.nickname,
@@ -128,15 +120,7 @@ export class Http2SimulationConnection {
         });
         this.eventSource.addEventListener('/pacman/update/player', (playerToUpdateEvent: MessageEvent) => {
           const playersWithMeasurementInfo = JSON.parse(playerToUpdateEvent.data);
-          if (environment.whichPlayer === 1) {
-            if (playersWithMeasurementInfo.player.nickname.match('first*')) {
-              const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
-              this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
-                responseTimeInMillis,
-                Math.ceil((Number(playersWithMeasurementInfo.requestTimestamp) - this.timeForStartCommunication) / 1000),
-                playersWithMeasurementInfo.player.version, playersWithMeasurementInfo.contentLength, playersWithMeasurementInfo.requestTimestamp);
-            }
-          } else if (environment.whichPlayer === 5) {
+          if (environment.whichPlayer === 5) {
             if (playersWithMeasurementInfo.player.nickname.match('second*')) {
               const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
               this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
