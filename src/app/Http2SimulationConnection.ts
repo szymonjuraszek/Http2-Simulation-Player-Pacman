@@ -51,7 +51,6 @@ export class Http2SimulationConnection {
       this.timeForStartCommunication = new Date().getTime();
       const sender = interval(MESSAGE_FREQUENCY);
       this.sub = sender.subscribe(() => {
-        console.error('Wysylam');
         timesRun += 1;
         if (timesRun === 200) {
           timesRun = 0;
