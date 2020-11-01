@@ -89,7 +89,7 @@ export class Http2SimulationConnection {
       },
       observe: 'response'
     }).subscribe((player: HttpResponse<Player>) => {
-      if (environment.whichPlayer === 5) {
+      if (environment.whichPlayer === 3) {
         if (player.body.nickname.match('second*')) {
           const responseTimeInMillis = new Date().getTime() - Number(player.headers.get('requestTimestamp'));
           this.measurementService.addMeasurementResponse(player.body.nickname,
@@ -119,7 +119,7 @@ export class Http2SimulationConnection {
         });
         this.eventSource.addEventListener('/pacman/update/player', (playerToUpdateEvent: MessageEvent) => {
           const playersWithMeasurementInfo = JSON.parse(playerToUpdateEvent.data);
-          if (environment.whichPlayer === 5) {
+          if (environment.whichPlayer === 3) {
             if (playersWithMeasurementInfo.player.nickname.match('second*')) {
               const responseTimeInMillis = new Date().getTime() - playersWithMeasurementInfo.requestTimestamp;
               this.measurementService.addMeasurementResponse(playersWithMeasurementInfo.player.nickname,
