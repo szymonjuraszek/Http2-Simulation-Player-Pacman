@@ -50,10 +50,10 @@ export class Http2SimulationConnection {
 
     let timesRun = 0;
     let strategy = true;
-    // for (let i = 0; i < this.arrayWithAdditionalData.length; i++) {
-    //   this.arrayWithAdditionalData[i] = new AdditionalData(11111, 22222, 33333, this.additionalData);
-    // }
-    // data.additionalData = this.additionalData;
+    for (let i = 0; i < this.arrayWithAdditionalData.length; i++) {
+      this.arrayWithAdditionalData[i] = new AdditionalData(11111, 22222, 33333, this.additionalData);
+    }
+    data.additionalData = this.additionalData;
 
     setTimeout(() => {
       const sender = interval(this.speed);
