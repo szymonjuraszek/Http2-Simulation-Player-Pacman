@@ -3,15 +3,17 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Player} from './model/Player';
 import {MeasurementService} from './measurement/MeasurementService';
-import {COMMUNICATION_TIME, MESSAGE_FREQUENCY, URL} from '../../globalConfig';
+import {COMMUNICATION_TIME, MESSAGE_FREQUENCY, SIZE_OF_ADDITIONAL_DATA, URL} from '../../globalConfig';
 import {environment} from '../environments/environment';
+import {AdditionalData} from './model/AdditionalData';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Http2SimulationConnection {
   private additionalData = this.randomString(50, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-  private variable = this.makeid(30000);
+  private arrayWithAdditionalData: Array<AdditionalData> = new Array<AdditionalData>(SIZE_OF_ADDITIONAL_DATA);
+
   private nickname;
   private http: HttpClient;
   private eventSource: EventSource;
@@ -36,6 +38,7 @@ export class Http2SimulationConnection {
   initializeConnection(data, timeToSend): void {
     console.error('Inicjalizuje polaczenie.');
 
+    this.timeForStartCommunication = new Date().getTime();
     setTimeout(() => {
       this.joinToGame(this.nickname);
       this.addPlayer(this.nickname);
@@ -44,11 +47,12 @@ export class Http2SimulationConnection {
 
     let timesRun = 0;
     let strategy = true;
+    // for (let i = 0; i < this.arrayWithAdditionalData.length; i++) {
+    //   this.arrayWithAdditionalData[i] = new AdditionalData(11111, 22222, 33333, this.additionalData);
+    // }
     // data.additionalData = this.additionalData;
 
     setTimeout(() => {
-      console.error('Zaczynam wysylac dane.');
-      this.timeForStartCommunication = new Date().getTime();
       const sender = interval(MESSAGE_FREQUENCY);
       this.sub = sender.subscribe(() => {
         timesRun += 1;
