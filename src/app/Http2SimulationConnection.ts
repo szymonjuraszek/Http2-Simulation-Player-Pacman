@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Player} from './model/Player';
 import {MeasurementService} from './measurement/MeasurementService';
-import {COMMUNICATION_TIME, MESSAGE_FREQUENCY, SIZE_OF_ADDITIONAL_DATA, URL} from '../../globalConfig';
+import {COMMUNICATION_TIME, SIZE_OF_ADDITIONAL_DATA, URL} from '../../globalConfig';
 import {environment} from '../environments/environment';
 import {AdditionalData} from './model/AdditionalData';
 
@@ -13,6 +13,7 @@ import {AdditionalData} from './model/AdditionalData';
 export class Http2SimulationConnection {
   private additionalData = this.randomString(50, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
   private arrayWithAdditionalData: Array<AdditionalData> = new Array<AdditionalData>(SIZE_OF_ADDITIONAL_DATA);
+  private speed;
 
   private nickname;
   private http: HttpClient;
@@ -29,10 +30,12 @@ export class Http2SimulationConnection {
     return result;
   }
 
-  constructor(nick, http, measurementService) {
+  constructor(nick, http, measurementService, speed) {
     this.nickname = nick;
     this.http = http;
     this.measurementService = measurementService;
+    this.speed = speed;
+    console.error(speed);
   }
 
   initializeConnection(data, timeToSend): void {
@@ -53,7 +56,7 @@ export class Http2SimulationConnection {
     // data.additionalData = this.additionalData;
 
     setTimeout(() => {
-      const sender = interval(MESSAGE_FREQUENCY);
+      const sender = interval(this.speed);
       this.sub = sender.subscribe(() => {
         timesRun += 1;
         if (timesRun === 200) {

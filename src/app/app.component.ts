@@ -18,15 +18,17 @@ export class AppComponent {
   private readonly measurementService: MeasurementService;
 
   constructor(private http: HttpClient) {
+    this.measurementService = new MeasurementService();
+    this.downloadService = new DownloadService(this.measurementService);
+  }
+
+  setSendingSpeedAndStart(speed: number): void {
     const examplePlayers = (data as any).default;
     const simulationConnection = new Array(examplePlayers.length);
 
-    this.measurementService = new MeasurementService();
-    this.downloadService = new DownloadService(this.measurementService);
-
     simulationConnection[environment.whichPlayer] = new Http2SimulationConnection(
       examplePlayers[environment.whichPlayer].nickname,
-      http, this.measurementService
+      this.http, this.measurementService, speed
     );
     simulationConnection[environment.whichPlayer].initializeConnection(
       examplePlayers[environment.whichPlayer],
