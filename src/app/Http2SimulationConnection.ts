@@ -11,7 +11,7 @@ import {AdditionalData} from './model/AdditionalData';
   providedIn: 'root',
 })
 export class Http2SimulationConnection {
-  private additionalData = this.randomString(50, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  private additionalData = this.randomString(20, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
   private arrayWithAdditionalData: Array<AdditionalData> = new Array<AdditionalData>(SIZE_OF_ADDITIONAL_DATA);
   private speed;
 
