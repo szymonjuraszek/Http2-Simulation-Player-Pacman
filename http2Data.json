@@ -1,11 +1,12 @@
 [
   {
-    "nickname": "first01",
+    "nickname": "local01",
     "positionX": 1264,
-    "positionY": 912,
+    "positionY": 976,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
     "nickname": "local02",
@@ -13,182 +14,79 @@
     "positionY": 976,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "first03",
+    "nickname": "local03",
     "positionX": 1264,
     "positionY": 848,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "first04",
+    "nickname": "remote04",
     "positionX": 1264,
     "positionY": 784,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "first05",
+    "nickname": "remote05",
     "positionX": 1264,
     "positionY": 720,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "first06",
+    "nickname": "remote06",
     "positionX": 1400,
     "positionY": 400,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "second07",
+    "nickname": "qwert07",
     "positionX": 1400,
     "positionY": 464,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "second08",
+    "nickname": "qwert08",
     "positionX": 1400,
     "positionY": 528,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "second09",
+    "nickname": "qwert09",
     "positionX": 1400,
     "positionY": 592,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   },
   {
-    "nickname": "second10",
+    "nickname": "qwert10",
     "positionX": 1400,
     "positionY": 656,
     "score": 0,
     "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "first11",
-    "positionX": 1264,
-    "positionY": 912,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "first12",
-    "positionX": 1200,
-    "positionY": 912,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote13",
-    "positionX": 1264,
-    "positionY": 912,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote14",
-    "positionX": 1264,
-    "positionY": 976,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote15",
-    "positionX": 1264,
-    "positionY": 848,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote16",
-    "positionX": 1264,
-    "positionY": 784,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote17",
-    "positionX": 1264,
-    "positionY": 720,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote18",
-    "positionX": 1400,
-    "positionY": 400,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote19",
-    "positionX": 1400,
-    "positionY": 464,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote20",
-    "positionX": 1400,
-    "positionY": 528,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote21",
-    "positionX": 1400,
-    "positionY": 592,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote22",
-    "positionX": 1400,
-    "positionY": 656,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote23",
-    "positionX": 1264,
-    "positionY": 912,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
-  },
-  {
-    "nickname": "remote24",
-    "positionX": 1200,
-    "positionY": 912,
-    "score": 0,
-    "stepDirection": "HOR",
-    "version": 0
+    "version": 0,
+    "additionalData": []
   }
 ]
