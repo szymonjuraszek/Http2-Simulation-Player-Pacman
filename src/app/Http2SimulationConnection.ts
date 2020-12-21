@@ -129,8 +129,8 @@ export class Http2SimulationConnection {
   }
 
   saveMeasurement(nickname, requestTimestamp, version, contentLength): void {
-    if (environment.whichPlayer === 3) {
-      if (nickname.match('remote*')) {
+    if (environment.whichPlayer === 6) {
+      if (nickname.match('qwert*')) {
         const responseTimeInMillis = new Date().getTime() - requestTimestamp;
         this.measurementService.addMeasurementResponse(
           nickname,
