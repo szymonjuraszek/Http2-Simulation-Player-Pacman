@@ -11,3 +11,5 @@ start-10
 
 Oczywiscie zeby uzyskac osobne polaczenie http2 trzeba uruchamiac aplikacje na roznych komputerach albo przegladarce.
 Http2 z zalozenia wykorzystuje jedno polaczenie na 'origin'.
+
+Zapisuje pomiary tylko dla graczy od 7 do 10 (wlacznie)
